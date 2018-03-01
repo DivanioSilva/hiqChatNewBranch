@@ -5,7 +5,10 @@ export class AuthService {
 
     public userState: boolean = false;
     
-    public login(): void{
+    public login(userCredential: {
+        email: string, 
+        password: string
+    }): void{
         this.userState = true;
     }
 
