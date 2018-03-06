@@ -21,4 +21,11 @@ export class LoginComponent {
     });
   }
 
+  doSignUp() {
+    this.auth.createUser({
+      email: this.email, 
+      password: this.password 
+    });
+  }
+
 }

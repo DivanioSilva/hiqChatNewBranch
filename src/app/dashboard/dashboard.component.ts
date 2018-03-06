@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'dashboard',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  
+  constructor(public auth: AuthService){
+
+  }
+
+  public doLogoff() {
+    this.auth.logout();
+  }
+
+  public setDisplayname() {
+    this.auth.userState.updateProfile(
+      { displayName: "João Gomes", photoURL: "http://google.it/jgomes"}
+    );
+  }
 }

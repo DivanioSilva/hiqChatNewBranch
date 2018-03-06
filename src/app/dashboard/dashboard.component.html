@@ -1,1 +1,8 @@
 <p>Dashboard</p>
+<p>O meu nickname é: {{auth.userState.displayName}}</p>
+<button class="btn btn-danger"
+                    (click)="doLogoff()">
+                    Logoff</button>
+
+<button class="btn btn-danger"
+    (click)="setDisplayname()">set displayname</button>
