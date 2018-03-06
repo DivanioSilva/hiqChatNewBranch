@@ -15,7 +15,10 @@ export class LoginComponent {
   public password: string;
 
   doLogin(){
-    this.auth.login({email: this.email, password: this.password });
+    this.auth.login({
+      email: this.email, 
+      password: this.password 
+    });
   }
 
 }
