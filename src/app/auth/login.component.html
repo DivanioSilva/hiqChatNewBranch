@@ -14,7 +14,18 @@
                 <button class="btn btn-danger"
                     (click)="doLogin()">
                     Login</button>
+                    
+                <button class="btn btn-danger"
+                    (click)="doSignUp()">
+                    signup</button>
+
+                <button class="btn btn-danger"
+                    (click)="testit()">
+                    teste it</button>
             </form>
+
+            {{objData | async | json}}
+
         </div>
     </div>
 </div>

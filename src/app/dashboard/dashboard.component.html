@@ -1,1 +1,21 @@
 <p>Dashboard</p>
+<p>O meu nickname é: {{auth.userState.displayName}}</p>
+<button class="btn btn-danger"
+                    (click)="doLogoff()">
+                    Logoff</button>
+
+<button class="btn btn-danger"
+    (click)="setDisplayname()">set displayname</button>
+
+<div class="row">
+    <div class="col-md-10">
+        <input type="text" 
+            name="txtMessage"
+            #txtMessage />
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-danger"
+                    (click)="sendMessage(txtMessage.value)">
+                    Send</button>
+    </div>
+</div>
