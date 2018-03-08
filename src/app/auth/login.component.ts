@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
+import { MessageService } from '../shared/message.service';
 
 @Component({
   selector: 'login',
@@ -9,7 +10,7 @@ import { AuthService } from '../shared/auth.service';
 
 export class LoginComponent {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public message: MessageService) { }
 
   public email: string;
   public password: string;
@@ -26,6 +27,11 @@ export class LoginComponent {
       email: this.email, 
       password: this.password 
     });
+  }
+  public objData: any;
+  testit() {
+    this.objData = this.message.getHackersNews();
+      //.subscribe(obj => this.objData = obj);
   }
 
 }
