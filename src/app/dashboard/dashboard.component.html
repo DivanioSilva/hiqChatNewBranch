@@ -18,9 +18,11 @@
                 Send</button>
         </div>
     </div>
-    <div class="row" *ngFor="let item of channelData | async">
-        <p>
-                {{item.user}}:&nbsp;{{item.message}} - <small>{{item.date | date: 'M/d/yy, h:mm a'}}</small>
-        </p>
+    <div class="row" *ngFor="let item of channelData">
+        <div class="row">
+            <div style="float: left;">{{item.user}}:&nbsp;</div>
+            <div style="float: left;" [innerHTML]="item.message"></div>
+            <small style="float: left;"> - {{item.date | date: 'M/d/yy, h:mm a'}}</small>
+        </div>
     </div>
 </div>

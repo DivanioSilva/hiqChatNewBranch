@@ -12,15 +12,19 @@ import { Observable } from "rxjs/Observable";
 })
 export class DashboardComponent implements OnInit {
 
-  public channelData: Observable<any[]>;
+  public channelData: Array<{ user: string, message: string, date: Date }>;
   constructor(public auth: AuthService,
     public message: MessageService){
       
     }
   
   ngOnInit(): void {
-    this.channelData = this.message.getChannelMessage();
-      
+    this.message.getChannelMessage()
+      .subscribe(data => {
+        this.channelData = data.sort(
+          (a, b) => (new Date(a.date)).getTime() - (new Date(b.date)).getTime()
+        ).reverse();
+      });   
   }
 
   public doLogoff() {
