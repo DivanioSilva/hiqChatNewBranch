@@ -1,21 +1,26 @@
-<p>Dashboard</p>
-<p>O meu nickname é: {{auth.userState.displayName}}</p>
-<button class="btn btn-danger"
-                    (click)="doLogoff()">
-                    Logoff</button>
+<div class="container">
+    <div class="row" [style.margin-bottom]="'25px'">
+        <div class="col-md-12">
+            <p>Dashboard</p>
+            <p>O meu nickname é: {{auth.userState.displayName}}</p>
+            <button class="btn btn-danger" (click)="doLogoff()">
+                Logoff</button>
 
-<button class="btn btn-danger"
-    (click)="setDisplayname()">set displayname</button>
-
-<div class="row">
-    <div class="col-md-10">
-        <input type="text" 
-            name="txtMessage"
-            #txtMessage />
+            <button class="btn btn-danger" (click)="setDisplayname()">set displayname</button>
+        </div>
     </div>
-    <div class="col-md-2">
-        <button class="btn btn-danger"
-                    (click)="sendMessage(txtMessage.value)">
-                    Send</button>
+    <div class="row">
+        <div class="col-md-10">
+            <input type="text" style="width: 100%" name="txtMessage" #txtMessage />
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-danger" (click)="sendMessage(txtMessage.value)">
+                Send</button>
+        </div>
+    </div>
+    <div class="row" *ngFor="let item of channelData | async">
+        <p>
+                {{item.user}}:&nbsp;{{item.message}} - <small>{{item.date | date: 'M/d/yy, h:mm a'}}</small>
+        </p>
     </div>
 </div>
