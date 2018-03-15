@@ -1,3 +1,31 @@
 
 <login *ngIf="!auth.userState"></login>
-<dashboard *ngIf="auth.userState"></dashboard>
+<dashboard *ngIf="auth.userState"></dashboard> 
+
+<!-- 
+    - Modulo de gestão de forms.
+    - formsModule.
+    - ppt: cap7.pptx
+-->
+<!--
+    <form #formb="ngForm" >
+    <input 
+        name="input1"
+        required 
+        type="text"
+        placeholder="input de teste"
+        [(ngModel)]="input1" />
+    <button type="submit">Click Me!!</button>
+     {{input1}} <br />
+
+     <select name="select1" multiple [(ngModel)]="select1">
+         <option>option1</option>
+         <option>option1</option>
+         <option>option1</option>
+     </select>
+
+     {{select1 | json }} <br />
+
+</form>
+
+-->
