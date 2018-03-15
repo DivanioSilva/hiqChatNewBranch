@@ -18,11 +18,12 @@
                 Send</button>
         </div>
     </div>
-    <div style="padding: 20px; padding-left: 0;">
-        <div message *ngFor="let item of channelData" 
+    <div>
+        <div message *ngFor="let item of channelData; let odd=odd;" 
         [name]="item.user" 
         [message]="item.message"
-        [date]="item.date | date: 'M/d/yy, h:mm a'"></div>
+        [date]="item.date | date: 'M/d/yy, h:mm a'"
+        [odd]="odd"></div>
     </div>
     
 
