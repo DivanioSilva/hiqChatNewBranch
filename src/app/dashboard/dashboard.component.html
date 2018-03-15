@@ -9,21 +9,13 @@
             <button class="btn btn-danger" (click)="setDisplayname()">set displayname</button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-10">
-            <input type="text" style="width: 100%" name="txtMessage" #txtMessage />
-        </div>
-        <div class="col-md-2">
-            <button class="btn btn-danger" (click)="sendMessage(txtMessage.value)">
-                Send</button>
-        </div>
-    </div>
+    
+    <div message-input></div>
     <div>
-        <div message *ngFor="let item of channelData; let odd=odd;" 
+        <div message *ngFor="let item of channelData;" 
         [name]="item.user" 
         [message]="item.message"
-        [date]="item.date | date: 'M/d/yy, h:mm a'"
-        [odd]="odd"></div>
+        [date]="item.date | date: 'M/d/yy, h:mm a'"></div>
     </div>
     
 

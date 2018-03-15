@@ -17,13 +17,15 @@ import { LoginComponent } from './auth/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageService } from './shared/message.service';
 import { MessageComponent } from './dashboard/message/message.component';
+import { MessageInputComponent } from './dashboard/messageInput/messageInput.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    MessageComponent
+    MessageComponent,
+    MessageInputComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { Observable } from "rxjs/Observable";
 export class DashboardComponent implements OnInit {
 
   public channelData: Array<{ user: string, message: string, date: Date }>;
+  
   constructor(public auth: AuthService,
     public message: MessageService){
       
@@ -33,15 +34,7 @@ export class DashboardComponent implements OnInit {
 
   public setDisplayname() {
     this.auth.userState.updateProfile(
-      { displayName: "João Gomes", photoURL: "http://google.it/jgomes"}
+      { displayName: "João Gomes", photoURL: "http://google.it/jgomes" }
     );
-  }
-
-  public sendMessage(message: string) {
-    this.message.createNewMessage(message)
-      .then(
-        (value) => console.log(value), 
-        (reason) => console.log(reason)
-      );
   }
 }
