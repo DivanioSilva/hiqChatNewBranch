@@ -7,13 +7,5 @@ import { AuthService } from './shared/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  public input1: string;
-
-  constructor(public auth: AuthService){
-    this.input1 = "Olá mundo"; 
-  }
-
-
-
+  constructor(public auth: AuthService) { }
 }

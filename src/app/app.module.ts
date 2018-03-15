@@ -16,12 +16,14 @@ import { AuthService } from './shared/auth.service';
 import { LoginComponent } from './auth/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageService } from './shared/message.service';
+import { MessageComponent } from './dashboard/message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
