@@ -1,0 +1,24 @@
+<div class="container">
+        <div class="row" [style.margin-bottom]="'25px'">
+            <div class="col-md-12">
+                <p>Profile</p>
+                <p>
+                    O meu nickname é: {{displayName}}
+                </p>
+                <form #form>
+                    <div class="form-group">
+                        <label for="nickname">Nickname</label>
+                        <input type="text" 
+                            required
+                            class="form-control" 
+                            id="nickname" 
+                            name="nickname"
+                            placeholder="Nickname"
+                            [(ngModel)]="displayName">
+                    </div>
+                    
+                    <button [disabled]="!displayName" class="btn btn-default" (click)="saveMe()" >Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>

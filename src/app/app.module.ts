@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RoutingModule } from './routing.module';
 
 import { environment } from '../environments/environment';
 
@@ -18,6 +19,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageService } from './shared/message.service';
 import { MessageComponent } from './dashboard/message/message.component';
 import { MessageInputComponent } from './dashboard/messageInput/messageInput.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NotFoundComponent } from './shared/notfound/notfound.component';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +29,14 @@ import { MessageInputComponent } from './dashboard/messageInput/messageInput.com
     LoginComponent,
     DashboardComponent,
     MessageComponent,
-    MessageInputComponent
+    MessageInputComponent,
+    ProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    RoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.config),
     AngularFirestoreModule,

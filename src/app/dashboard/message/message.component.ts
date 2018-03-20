@@ -13,7 +13,7 @@ export class MessageComponent implements OnInit {
   @Input() message: string;
   @Input() date: string;
   
-  public realname: string = this.auth.userState.displayName;
+  public realname: string = this.auth.displayName;
   
   ngOnInit(): void { 
     

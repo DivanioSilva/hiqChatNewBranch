@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
   
   constructor(public auth: AuthService,
     public message: MessageService){
-      
     }
   
   ngOnInit(): void {
@@ -32,9 +31,4 @@ export class DashboardComponent implements OnInit {
     this.auth.logout();
   }
 
-  public setDisplayname() {
-    this.auth.userState.updateProfile(
-      { displayName: "João Gomes", photoURL: "http://google.it/jgomes" }
-    );
-  }
 }

@@ -6,12 +6,16 @@ import { User } from "@firebase/auth-types";
 export class AuthService {
 
     public userState: User = null;
-
+    public displayName: string ="";
     constructor(public af: AngularFireAuth){
         this.af.authState
             .subscribe(user => {
                 this.userState = user;
-                console.log('Auth Service Init:', user);
+                if (user) {
+                    if (!this.userState.displayName) 
+                        this.displayName = "Guest_" + Math.floor((Math.random() * 100000) + 1);
+                    else this.displayName = this.userState.displayName;
+                }
             })
     }
     

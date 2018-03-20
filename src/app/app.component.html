@@ -1,6 +1,6 @@
 
 <login *ngIf="!auth.userState"></login>
-<dashboard *ngIf="auth.userState"></dashboard> 
+<router-outlet *ngIf="auth.userState"></router-outlet>
 
 <!-- 
     - Modulo de gestão de forms.

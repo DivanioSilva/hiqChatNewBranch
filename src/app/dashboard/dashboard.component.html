@@ -2,11 +2,11 @@
     <div class="row" [style.margin-bottom]="'25px'">
         <div class="col-md-12">
             <p>Dashboard</p>
-            <p>O meu nickname é: {{auth.userState.displayName}}</p>
+            <p>
+                O meu nickname é: <a [routerLink]="['/profile', auth.displayName]">{{auth.displayName}}</a>
+            </p>
             <button class="btn btn-danger" (click)="doLogoff()">
                 Logoff</button>
-
-            <button class="btn btn-danger" (click)="setDisplayname()">set displayname</button>
         </div>
     </div>
     
