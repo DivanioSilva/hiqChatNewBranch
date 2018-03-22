@@ -21,6 +21,7 @@ import { MessageComponent } from './dashboard/message/message.component';
 import { MessageInputComponent } from './dashboard/messageInput/messageInput.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
+import { AuthGuard } from './shared/auth.guard';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { NotFoundComponent } from './shared/notfound/notfound.component';
     AngularFireStorageModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService, MessageService],
+  providers: [AuthService, MessageService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
