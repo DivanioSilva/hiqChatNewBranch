@@ -1,0 +1,10 @@
+.self {
+    background-color: lightpink;
+}
+
+.message {
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}

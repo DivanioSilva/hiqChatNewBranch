@@ -12,32 +12,23 @@ import { Observable } from "rxjs/Observable";
 })
 export class DashboardComponent implements OnInit {
 
-  public channelData: Observable<any[]>;
+  public channelData: Array<{ user: string, message: string, date: Date }>;
+  
   constructor(public auth: AuthService,
     public message: MessageService){
-      
     }
   
   ngOnInit(): void {
-    this.channelData = this.message.getChannelMessage();
-      
+    this.message.getChannelMessage()
+      .subscribe(data => {
+        this.channelData = data.sort(
+          (a, b) => (new Date(a.date)).getTime() - (new Date(b.date)).getTime()
+        ).reverse();
+      });   
   }
 
   public doLogoff() {
     this.auth.logout();
   }
 
-  public setDisplayname() {
-    this.auth.userState.updateProfile(
-      { displayName: "João Gomes", photoURL: "http://google.it/jgomes"}
-    );
-  }
-
-  public sendMessage(message: string) {
-    this.message.createNewMessage(message)
-      .then(
-        (value) => console.log(value), 
-        (reason) => console.log(reason)
-      );
-  }
 }

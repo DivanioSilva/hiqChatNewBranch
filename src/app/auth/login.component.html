@@ -5,11 +5,19 @@
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Email">
+                    <input type="email" 
+                        class="form-control" 
+                        name="email" 
+                        [(ngModel)]="email" 
+                        placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password">
+                    <input type="password" 
+                        class="form-control" 
+                        name="password" 
+                        [(ngModel)]="password" 
+                        placeholder="Password">
                 </div>
                 <button class="btn btn-danger"
                     (click)="doLogin()">
@@ -18,14 +26,7 @@
                 <button class="btn btn-danger"
                     (click)="doSignUp()">
                     signup</button>
-
-                <button class="btn btn-danger"
-                    (click)="testit()">
-                    teste it</button>
             </form>
-
-            {{objData | async | json}}
-
         </div>
     </div>
 </div>

@@ -10,7 +10,7 @@ import { MessageService } from '../shared/message.service';
 
 export class LoginComponent {
 
-  constructor(public auth: AuthService, public message: MessageService) { }
+  constructor(public auth: AuthService) { }
 
   public email: string;
   public password: string;
@@ -27,11 +27,6 @@ export class LoginComponent {
       email: this.email, 
       password: this.password 
     });
-  }
-  public objData: any;
-  testit() {
-    this.objData = this.message.getHackersNews();
-      //.subscribe(obj => this.objData = obj);
   }
 
 }
