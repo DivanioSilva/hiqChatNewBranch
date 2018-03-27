@@ -22,8 +22,8 @@ export class MessageInputComponent {
   ngOnInit(): void { }
 
   public sendMessage() {
-    this.messageString = "";
     this.messageChanged.emit({item1: this.messageString, item2: "" });
+    this.messageString = "";
   }
 
 }

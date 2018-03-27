@@ -32,6 +32,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public sendMessage(messageString: {item1: string, item2: string}) {
+    console.log(messageString);
     this.message.createNewMessage(messageString.item1)
       .then(
         (value) => {
