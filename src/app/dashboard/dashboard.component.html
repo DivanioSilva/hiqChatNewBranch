@@ -15,6 +15,7 @@
         <div message *ngFor="let item of channelData;" 
         [name]="item.user" 
         [message]="item.message"
-        [date]="item.date | date: 'M/d/yy, h:mm a'"></div>
+        [date]="item.date | date: 'M/d/yy, h:mm a'"
+        [realName]="auth.displayName"></div>
     </div>
 </div>

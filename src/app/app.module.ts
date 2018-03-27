@@ -10,17 +10,19 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RoutingModule } from './routing.module';
 
+import { ChatWidgetModule } from "./modules/chatwidgets/chatwidget.module";
+
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
-import { AuthService } from './shared/auth.service';
 import { LoginComponent } from './auth/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MessageService } from './shared/message.service';
-import { MessageComponent } from './dashboard/message/message.component';
 import { MessageInputComponent } from './dashboard/messageInput/messageInput.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
+
+import { AuthService } from './shared/auth.service';
+import { MessageService } from './shared/message.service';
 import { AuthGuard } from './shared/auth.guard';
 
 
@@ -29,7 +31,6 @@ import { AuthGuard } from './shared/auth.guard';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    MessageComponent,
     MessageInputComponent,
     ProfileComponent,
     NotFoundComponent
@@ -42,7 +43,8 @@ import { AuthGuard } from './shared/auth.guard';
     AngularFireModule.initializeApp(environment.config),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ChatWidgetModule
   ],
   providers: [AuthService, MessageService, AuthGuard],
   bootstrap: [AppComponent]
