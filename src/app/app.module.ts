@@ -17,7 +17,6 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MessageInputComponent } from './dashboard/messageInput/messageInput.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
 
@@ -31,7 +30,6 @@ import { AuthGuard } from './shared/auth.guard';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    MessageInputComponent,
     ProfileComponent,
     NotFoundComponent
   ],

@@ -10,7 +10,7 @@
         </div>
     </div>
     
-    <div message-input></div>
+    <div message-input (messageChanged)="sendMessage($event)"></div>
     <div>
         <div message *ngFor="let item of channelData;" 
         [name]="item.user" 
