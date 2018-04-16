@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
   canActivate() {
     return this.checkLogin();    
   }
-
+  
   checkLogin():Observable<boolean> {
 
     return this.auth.af.authState

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from '../../shared/auth.service';
 
 @Component({
   selector: '[message]',
@@ -7,13 +6,12 @@ import { AuthService } from '../../shared/auth.service';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-  constructor( private auth: AuthService) { }
+  constructor() { }
 
   @Input() name: string;
   @Input() message: string;
   @Input() date: string;
-  
-  public realname: string = this.auth.displayName;
+  @Input() realName: string;
   
   ngOnInit(): void { 
     

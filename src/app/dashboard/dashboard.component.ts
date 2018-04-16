@@ -31,4 +31,15 @@ export class DashboardComponent implements OnInit {
     this.auth.logout();
   }
 
+  public sendMessage(messageString: {item1: string, item2: string}) {
+    console.log(messageString);
+    this.message.createNewMessage(messageString.item1)
+      .then(
+        (value) => {
+          console.log(value);
+        }, 
+        (reason) => console.log(reason)
+      );
+  }
+
 }
